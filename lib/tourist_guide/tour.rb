@@ -3,7 +3,15 @@ class TouristGuide::Tour
   @@all =[]
 
   def initialize(attr_hash)
-    # self.name=attr_hash(:name)
+    # attr_hash.each do |attribute, v|
+    # self.name= attribute(:name)
+    # self.address= attribute(:address)
+    # self.description= attribute(:description)
+
+    # self.send "name=", "John Smith"
+    # equivalent to
+    # self.name = "John Smith"
+
     attr_hash.each do |attribute, v|
       self.send("#{attribute}=",v)
 
@@ -20,7 +28,10 @@ class TouristGuide::Tour
       self.new(hash)
     end
   end
+
+#to delete duplicated & previous lists
   def self.clear
    @@all =[]
   end
+
 end

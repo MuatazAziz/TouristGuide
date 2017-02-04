@@ -137,9 +137,13 @@ class TouristGuide::Cli
 
   def display_directions
     TouristGuide::Tour.all.each do |direction|
-      # name= direction.name.ljust(27, ' ')
-      # puts name
-      puts "Name: #{direction.name.ljust(27, '*')}     Address: #{direction.address.ljust(13, ' ')}     Description: #{direction.description.ljust(30, ' ')}"
+      #first_way
+      # name= direction.name.ljust(38, ' ')
+      # address= direction.address.ljust(21, ' ')
+      # description= direction.description.ljust(0, ' ')
+      # puts "Name: #{name} Address: #{address} Description: #{description}"
+      #second_way
+      puts "Name: #{direction.name.ljust(38, ' ')}     Address: #{direction.address.ljust(21, ' ')}     Description: #{direction.description.ljust(0, ' ')}"
     end
   end
 

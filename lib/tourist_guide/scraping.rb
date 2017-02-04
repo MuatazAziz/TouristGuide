@@ -4,13 +4,6 @@ class TouristGuide::Scraping
     scraped_directions =[]
     direction_name = direction_name.downcase
     # direction_name= ["malls", "park", "restaurants", "hotels", "coffee%20shops"]
-    # direction_name.each do |c|
-    #   if user_insert == "1"
-    #     direction = "malls"
-    #   if user_insert == "2"
-    #     direction = "Parks"
-    #   end
-
     html = open("https://iq.brate.com/en/search?q=#{direction_name}&region=8&sort=2&page=1")
 
     scraped_page = Nokogiri::HTML(html)
@@ -27,7 +20,6 @@ class TouristGuide::Scraping
         place[:description] = description
 
         scraped_directions << place
-    # end
   end
     return scraped_directions
   end
