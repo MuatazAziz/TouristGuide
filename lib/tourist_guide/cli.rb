@@ -1,24 +1,26 @@
 class TouristGuide::Cli
 
   def call
-    puts "                                                         ✰✰✰✰✰"
-    puts "                                      ✰✰✰✰✰     ✰✰✰✰✰     ✰✰✰✰✰     ✰✰✰✰✰"
-    puts "                         ✰✰✰✰✰     WELCOME TO THE TOURIST'S ERBIL GUIDE version #{TouristGuide::VERSION}    ✰✰✰✰✰"
-    puts "                                      ✰✰✰✰✰     ✰✰✰✰✰     ✰✰✰✰✰     ✰✰✰✰✰"
-    puts "                                            ✰✰✰✰✰     ✰✰✰✰✰     ✰✰✰✰✰"
-    puts "                                                   ✰✰✰✰✰     ✰✰✰✰✰"
-    # puts "                                                         ✰✰✰✰✰"
+    puts "                                                                   ✰✰✰✰✰".light_red
+    puts "                                                ✰✰✰✰✰     ✰✰✰✰✰     ✰✰✰✰✰     ✰✰✰✰✰".light_red
+    puts "                                        ✰✰✰✰✰     WELCOME TO THE TOURIST'S ERBIL GUIDE     ✰✰✰✰✰".colorize(:color => :light_yellow).bold
+    puts "                                                                version#{TouristGuide::VERSION}".colorize(:color => :yellow)
+    puts "                                                      ✰✰✰✰✰     ✰✰✰✰✰     ✰✰✰✰✰".light_yellow
+    puts "                                                             ✰✰✰✰✰     ✰✰✰✰✰".green
+    puts "                                                                   ✰✰✰✰✰".green
     list
     user_insert
   end
 
   def list
     puts ""
-    puts "choose your list:"
-    puts "----------------------------------------------------------------------------------------------------------------------"
-    puts "1. Hotels   ♡ ♡ ♡ ♡ ♡   2. Restaurants   ♡ ♡ ♡ ♡ ♡   3. Cafeterias   ♡ ♡ ♡ ♡ ♡   4. Parks   ♡ ♡ ♡ ♡ ♡   5. Malls"
+    puts "CHOOSE YOUR CATEGORY:".colorize(:color => :blue).bold
+    # puts "----------------------------------------------------------------------------------------------------------------------------------------------------".colorize(:background => :light_blue)
+    puts "                                                                                                                                                    ".colorize(:background => :blue)
     puts ""
-    puts "                   ♡ ♡ ♡ ♡ ♡   6. Back to the main menu    ♡ ♡ ♡ ♡ ♡   7. Exit    ♡ ♡ ♡ ♡ ♡   "
+    puts "               1. Hotels   ♡ ♡ ♡ ♡ ♡   2. Restaurants   ♡ ♡ ♡ ♡ ♡   3. Cafeterias   ♡ ♡ ♡ ♡ ♡   4. Parks   ♡ ♡ ♡ ♡ ♡   5. Malls".light_green
+    puts ""
+    puts "                                  ♡ ♡ ♡ ♡ ♡   6. Back to the main menu    ♡ ♡ ♡ ♡ ♡   7. Exit    ♡ ♡ ♡ ♡ ♡   ".green
   end
 
   def user_insert
@@ -62,7 +64,7 @@ class TouristGuide::Cli
       elsif   num == "6"
         call
       elsif num == "7"
-        puts "THANK YOU! HAVE A NICE TIME!"
+        puts "                                                          THANK YOU! HAVE A NICE TIME!".magenta
       else
         puts ""
         puts ""
@@ -143,7 +145,8 @@ class TouristGuide::Cli
       # description= direction.description.ljust(0, ' ')
       # puts "Name: #{name} Address: #{address} Description: #{description}"
       #second_way
-      puts "Name: #{direction.name.ljust(38, ' ')}     Address: #{direction.address.ljust(21, ' ')}     Description: #{direction.description.ljust(0, ' ')}"
+      puts "Name: #{direction.name.ljust(38, ' ').blue}     Address: #{direction.address.ljust(21, ' ').blue}     Description: #{direction.description.ljust(0, ' ').blue}"
+      puts "_________________________________________________________________________________________________________________________".magenta
     end
   end
 

@@ -1,5 +1,5 @@
 # require "tourist_guide/version"
-
+require 'colorize'
 require 'open-uri'
 require 'pry'
 require 'nokogiri'
