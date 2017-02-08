@@ -64,11 +64,11 @@ class TouristGuide::Cli
       elsif   num == "6"
         call
       elsif num == "7"
-        puts "                                                          THANK YOU! HAVE A NICE TIME!".magenta
+        puts "                                                          THANK YOU! HAVE A NICE TIME!".magenta.bold
       else
         puts ""
         puts ""
-        puts "NOT valid, please insert valid input"
+        puts "                                                           NOT valid, please insert valid input                                                     ".colorize(:color => :white, :background => :red).bold
         puts ""
 
         list
